@@ -1,0 +1,123 @@
+
+html{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  position: relative;
+  height: 100vh;
+  background-color: black;
+}
+
+.pc{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+}
+.pc > .btn{
+  position: absolute;
+  bottom: 10%;
+  color: black;
+  background: white;
+}
+.container{
+  display: flex;
+  flex: 1;
+  position: relative;
+  width: 100%;
+  top: 70%;
+  left: 50%;
+  justify-content: space-around;
+  transform: translate(-50%, -50%);
+}
+.btn{
+  font-size: 80px;
+  background: #adadadad;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color .3s ease-in-out;
+}
+
+.old{
+  font-size: 50px;
+  color: white;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  cursor: none;
+  opacity: 0;
+}
+@keyframes op {
+  100%{opacity: 1;}
+}
+
+.btn::before{
+  z-index: -1;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: white;
+  transition: transform .3s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.btn:hover::before,
+.btn:focus::before{
+  transform: scaleX(1);
+}
+.scores{
+  display: flex;
+  flex: 1;
+  position: absolute;
+  top: 10%;
+  left: 7%;
+  background: #adadadad;
+  width: 350px;
+  border-radius: 10px;
+  justify-content:flex-start;
+}
+span{
+  color: black;
+  position: relative;
+  top: 10%;
+  left: 10%;
+  color: white;
+  font-size: 40px;
+  margin: 20px;
+}
+.btn:hover,
+.btn:focus,
+.btn:active{
+  color: black;
+}
+@keyframes getting_back {
+  100%{transform: translateY(300px);}
+}
+@keyframes getting-center-rock{
+
+  100%{color: black;background:white;transform: translateX(245%);}
+}
+@keyframes getting-center-scissors {
+  100%{color: black;background:white;transform: translateX(-146%);}
+}
+@keyframes getting-center-paper {
+  100%{color: black;background:white;transform: translateX(23%);}
+}
+
+h1{
+  color: white;
+  text-align: center;
+}
+/*370*/
